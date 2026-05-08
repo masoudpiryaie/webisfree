@@ -9,7 +9,7 @@ export default function SummarySection() {
       className="border-b border-[var(--border)] bg-[var(--surface)] py-24"
     >
       <div className="mx-auto max-w-6xl px-6">
-        <Typography variant="h2" component="h2" mb={3}>
+        <Typography variant="h2" sx={{ mb: 5 }} component="h2">
           Summary
         </Typography>
 

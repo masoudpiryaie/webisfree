@@ -1,5 +1,4 @@
 import Button from "@mui/material/Button";
-import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 
 export default function HeroSection() {
@@ -10,15 +9,15 @@ export default function HeroSection() {
     >
       <div className="mx-auto max-w-6xl px-6">
         <div className="max-w-3xl">
-          <Typography variant="body1" color="primary" fontWeight={600}>
+          <Typography variant="body1" color="primary" sx={{ fontWeight: 600 }}>
             Frontend Developer
           </Typography>
 
           <Typography
             variant="h1"
             component="h1"
-            mt={2}
             sx={{
+              mt: 2,
               fontSize: {
                 xs: "2.5rem",
                 md: "4.5rem",
@@ -44,7 +43,7 @@ export default function HeroSection() {
             and modern frontend tooling.
           </Typography>
 
-          <Stack direction={{ xs: "column", sm: "row" }} spacing={2} mt={4}>
+          <div className="mt-4 flex flex-col gap-4 sm:flex-row">
             <Button variant="contained" href="#contact">
               Contact Me
             </Button>
@@ -52,7 +51,7 @@ export default function HeroSection() {
             <Button variant="outlined" href="#experience">
               View Experience
             </Button>
-          </Stack>
+          </div>
         </div>
       </div>
     </section>

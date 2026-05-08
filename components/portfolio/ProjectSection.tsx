@@ -42,7 +42,7 @@ export default function ProjectsSection() {
                   {project.title}
                 </Typography>
 
-                <Typography color="primary" fontWeight={600} mt={1}>
+                <Typography sx={{ color: "primary", fontWeight: 600, mt: 1 }}>
                   {project.role}
                 </Typography>
 

@@ -101,7 +101,7 @@ function StoreButtons() {
           },
         }}
       >
-        <Box textAlign="left">
+        <Box sx={{ textAlign: "left" }}>
           <Typography sx={{ fontSize: 10, lineHeight: 1.2 }}>
             GET IT ON
           </Typography>
@@ -128,7 +128,7 @@ function StoreButtons() {
           },
         }}
       >
-        <Box textAlign="left">
+        <Box sx={{ textAlign: "left" }}>
           <Typography sx={{ fontSize: 10, lineHeight: 1.2 }}>
             Download on the
           </Typography>
@@ -143,7 +143,7 @@ function StoreButtons() {
 
 function SectionTitle({ eyebrow, title }: { eyebrow: string; title: string }) {
   return (
-    <Box textAlign="center" mb={8}>
+    <Box sx={{ textAlign: "center", mb: 8 }}>
       <Typography
         sx={{
           color: "#a855f7",
@@ -193,11 +193,13 @@ export default function ClubmatePage() {
       >
         <Container maxWidth="xl">
           <Toolbar disableGutters sx={{ minHeight: 84 }}>
-            <Stack
-              direction="row"
-              alignItems="center"
-              spacing={1.5}
-              sx={{ flexGrow: 1 }}
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                gap: 1.5,
+                flexGrow: 1,
+              }}
             >
               <Box
                 sx={{
@@ -225,12 +227,15 @@ export default function ClubmatePage() {
               >
                 clubmate
               </Typography>
-            </Stack>
+            </Box>
 
-            <Stack
-              direction="row"
-              spacing={4}
-              sx={{ display: { xs: "none", md: "flex" }, mr: 4 }}
+            <Box
+              sx={{
+                display: { xs: "none", md: "flex" },
+                flexDirection: "row",
+                gap: 4,
+                mr: 4,
+              }}
             >
               {["Features", "How it works", "For clubs", "Safety"].map(
                 (item) => (
@@ -248,7 +253,7 @@ export default function ClubmatePage() {
                   </Link>
                 ),
               )}
-            </Stack>
+            </Box>
 
             <Button
               variant="contained"
@@ -272,7 +277,6 @@ export default function ClubmatePage() {
       </AppBar>
 
       {/* HERO */}
-      {/* HERO */}
       <Box
         sx={{
           position: "relative",
@@ -283,7 +287,6 @@ export default function ClubmatePage() {
           alignItems: "center",
         }}
       >
-        {/* Background image */}
         <Image
           src="/images/clubmate/hero-phones.png"
           alt="Clubmate app background"
@@ -296,7 +299,6 @@ export default function ClubmatePage() {
           }}
         />
 
-        {/* Dark overlay */}
         <Box
           sx={{
             position: "absolute",
@@ -307,7 +309,6 @@ export default function ClubmatePage() {
           }}
         />
 
-        {/* Purple glow overlay */}
         <Box
           sx={{
             position: "absolute",
@@ -318,7 +319,6 @@ export default function ClubmatePage() {
           }}
         />
 
-        {/* Content */}
         <Container
           maxWidth="xl"
           sx={{
@@ -400,12 +400,15 @@ export default function ClubmatePage() {
         }}
       >
         <Container maxWidth="xl">
-          <Stack
-            direction="row"
-            flexWrap="wrap"
-            justifyContent="space-between"
-            alignItems="center"
-            gap={3}
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "row",
+              flexWrap: "wrap",
+              justifyContent: "space-between",
+              alignItems: "center",
+              gap: 3,
+            }}
           >
             {clubLogos.map((logo) => (
               <Typography
@@ -421,7 +424,7 @@ export default function ClubmatePage() {
                 {logo}
               </Typography>
             ))}
-          </Stack>
+          </Box>
         </Container>
       </Box>
 
@@ -505,7 +508,6 @@ export default function ClubmatePage() {
               alignItems: "stretch",
             }}
           >
-            {/* Left content */}
             <Box>
               <Typography
                 sx={{
@@ -596,7 +598,6 @@ export default function ClubmatePage() {
               </Stack>
             </Box>
 
-            {/* Right banner */}
             <Box
               sx={{
                 position: "relative",
@@ -604,7 +605,6 @@ export default function ClubmatePage() {
                 overflow: "hidden",
                 border: "1px solid rgba(255,255,255,0.08)",
                 minHeight: { xs: 500, md: 760 },
-                // background: "#0a0a0f",
               }}
             >
               <Image
@@ -671,7 +671,7 @@ export default function ClubmatePage() {
                   Download ClubMate Now
                 </Button>
 
-                <Box display="flex" justifyContent="center">
+                <Box sx={{ display: "flex", justifyContent: "center" }}>
                   <StoreButtons />
                 </Box>
               </Box>
@@ -689,8 +689,21 @@ export default function ClubmatePage() {
         }}
       >
         <Container maxWidth="xl">
-          <Stack alignItems="center" spacing={2}>
-            <Stack direction="row" alignItems="center" spacing={1.5}>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              gap: 2,
+            }}
+          >
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                gap: 1.5,
+              }}
+            >
               <Box
                 sx={{
                   width: 42,
@@ -717,7 +730,7 @@ export default function ClubmatePage() {
               >
                 clubmate
               </Typography>
-            </Stack>
+            </Box>
 
             <Typography
               sx={{
@@ -730,7 +743,13 @@ export default function ClubmatePage() {
               Dating. Clubbing. Connected.
             </Typography>
 
-            <Stack direction="row" spacing={1}>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "row",
+                gap: 1,
+              }}
+            >
               <IconButton sx={{ color: "rgba(255,255,255,0.72)" }}>
                 <InstagramIcon />
               </IconButton>
@@ -740,8 +759,8 @@ export default function ClubmatePage() {
               <IconButton sx={{ color: "rgba(255,255,255,0.72)" }}>
                 <CloseIcon />
               </IconButton>
-            </Stack>
-          </Stack>
+            </Box>
+          </Box>
         </Container>
       </Box>
     </Box>

@@ -1,6 +1,13 @@
 "use client";
 
-import { createContext, useContext, useMemo, useState, useEffect } from "react";
+import {
+  createContext,
+  useContext,
+  useMemo,
+  useState,
+  useEffect,
+  type ReactNode,
+} from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { ThemeProvider } from "@mui/material/styles";
@@ -27,11 +34,25 @@ export function useThemeMode() {
 }
 
 type AppProvidersProps = {
-  children: React.ReactNode;
+  children: ReactNode;
 };
 
+function getInitialThemeMode(): ThemeMode {
+  if (typeof window === "undefined") {
+    return "dark";
+  }
+
+  const savedTheme = window.localStorage.getItem("theme-mode");
+
+  if (savedTheme === "light" || savedTheme === "dark") {
+    return savedTheme;
+  }
+
+  return "dark";
+}
+
 export default function AppProviders({ children }: AppProvidersProps) {
-  const [mode, setMode] = useState<ThemeMode>("dark");
+  const [mode, setMode] = useState<ThemeMode>(getInitialThemeMode);
 
   const [queryClient] = useState(
     () =>
@@ -50,20 +71,8 @@ export default function AppProviders({ children }: AppProvidersProps) {
   );
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem("theme-mode") as ThemeMode | null;
-
-    if (savedTheme === "light" || savedTheme === "dark") {
-      setMode(savedTheme);
-      document.documentElement.classList.toggle("dark", savedTheme === "dark");
-      return;
-    }
-
-    document.documentElement.classList.add("dark");
-  }, []);
-
-  useEffect(() => {
     document.documentElement.classList.toggle("dark", mode === "dark");
-    localStorage.setItem("theme-mode", mode);
+    window.localStorage.setItem("theme-mode", mode);
   }, [mode]);
 
   const muiTheme = useMemo(() => getMuiTheme(mode), [mode]);

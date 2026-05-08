@@ -8,7 +8,7 @@ export default function ExperienceSection() {
   return (
     <section id="experience" className="section">
       <div className="container">
-        <Typography variant="h2" component="h2" mb={5}>
+        <Typography variant="h2" component="h2" sx={{ mb: 5 }}>
           Experience
         </Typography>
 
@@ -23,7 +23,7 @@ export default function ExperienceSection() {
                   {experience.title}
                 </Typography>
 
-                <Typography color="primary" fontWeight={600} mt={1}>
+                <Typography color="primary" sx={{ fontWeight: 600, mt: 1 }}>
                   {experience.company}
                 </Typography>
 
