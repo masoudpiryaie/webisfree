@@ -41,7 +41,7 @@ export const projects: Project[] = [
   {
     title: "Task AI",
     label: "AI Productivity Workspace",
-    image: "/images/portfolio/projects/taskai.png",
+    image: "/images/portfolio/projects/taskAi.png",
     href: "/projects/taskAi",
     github: "#",
     accent: "from-blue-500/25 via-violet-500/10 to-transparent",
