@@ -108,22 +108,6 @@ export default function PortfolioPage() {
                   <MailOutlineOutlinedIcon fontSize="small" />
                 </Link>
               </div>
-
-              <div className="mt-8 grid max-w-xl grid-cols-3 gap-3">
-                {quickStats.map((item) => (
-                  <div
-                    key={item.label}
-                    className="rounded-2xl border border-[var(--border)] bg-[var(--surface)]/75 p-4 text-center shadow-sm backdrop-blur"
-                  >
-                    <p className="text-xl font-black text-[var(--text-primary)]">
-                      {item.value}
-                    </p>
-                    <p className="mt-1 text-[11px] font-semibold text-[var(--text-secondary)]">
-                      {item.label}
-                    </p>
-                  </div>
-                ))}
-              </div>
             </div>
 
             <div className="relative mx-auto w-full max-w-[360px]">
@@ -196,17 +180,17 @@ export default function PortfolioPage() {
                 About me
               </SectionLabel>
 
-              <h2 className="mt-5 text-3xl font-black tracking-tight md:text-4xl">
+              <h2 className="mt-5 text-2xl font-black tracking-tight md:text-3xl">
                 I turn ideas into structured and responsive products.
               </h2>
             </div>
 
             <div>
-              <p className="text-base leading-8 text-[var(--text-secondary)]">
+              <p className="mt-4   text-sm leading-8 text-[var(--text-primary)] md:text-lg">
                 {profile.summary}
               </p>
 
-              <p className="mt-4 text-base leading-8 text-[var(--text-secondary)]">
+              <p className="mt-4   text-sm leading-8 text-[var(--text-primary)] md:text-lg">
                 {profile.secondSummary}
               </p>
 
@@ -234,8 +218,8 @@ export default function PortfolioPage() {
                 Selected Projects
               </SectionLabel>
 
-              <h2 className="mt-5 max-w-3xl text-3xl font-black tracking-tight md:text-5xl">
-                Product-style projects, not only static portfolio items.
+              <h2 className="mt-5 text-2xl font-black max-w-2xl  tracking-tight md:text-3xl">
+                Projects
               </h2>
 
               <p className="mt-4 max-w-2xl text-sm leading-7 text-[var(--text-secondary)] md:text-base">
@@ -256,7 +240,9 @@ export default function PortfolioPage() {
                   <BusinessCenterOutlinedIcon />
                 </div>
                 <div>
-                  <h2 className="text-2xl font-black">Work Experience</h2>
+                  <h2 className="mt-5 text-2xl font-black max-w-2xl  tracking-tight md:text-3xl">
+                    Work Experience
+                  </h2>
                   <p className="text-sm text-[var(--text-secondary)]">
                     Practical experience and responsibilities.
                   </p>
