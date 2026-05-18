@@ -136,7 +136,9 @@ export default function PortfolioPage() {
 
                 <div className="mt-6">
                   <Button
-                    fullWidth
+                    component="a"
+                    href="/files/resume/Masoud_Piryaie_CV.pdf"
+                    download
                     variant="contained"
                     endIcon={<DownloadOutlinedIcon />}
                     sx={{
