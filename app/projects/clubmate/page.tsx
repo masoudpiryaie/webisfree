@@ -6,7 +6,6 @@ import {
   AppBar,
   Box,
   Button,
-  Chip,
   Container,
   IconButton,
   Stack,
@@ -32,25 +31,29 @@ const howItWorks = [
     id: 1,
     title: "Find Events",
     description: "Explore the best club events in your city and beyond.",
-    icon: <CalendarMonthOutlinedIcon sx={{ fontSize: 38 }} />,
+    icon: <CalendarMonthOutlinedIcon sx={{ fontSize: { xs: 30, md: 38 } }} />,
   },
   {
     id: 2,
     title: "Discover People",
     description: "Swipe through clubbers who are going to the same event.",
-    icon: <Groups2OutlinedIcon sx={{ fontSize: 38 }} />,
+    icon: <Groups2OutlinedIcon sx={{ fontSize: { xs: 30, md: 38 } }} />,
   },
   {
     id: 3,
     title: "Send Ticket Offers",
     description: "Send a ticket offer and get accepted to go together.",
-    icon: <ConfirmationNumberOutlinedIcon sx={{ fontSize: 38 }} />,
+    icon: (
+      <ConfirmationNumberOutlinedIcon sx={{ fontSize: { xs: 30, md: 38 } }} />
+    ),
   },
   {
     id: 4,
     title: "Chat & Meet",
     description: "Chat, get hyped and meet at the club. The night is yours.",
-    icon: <ChatBubbleOutlineOutlinedIcon sx={{ fontSize: 38 }} />,
+    icon: (
+      <ChatBubbleOutlineOutlinedIcon sx={{ fontSize: { xs: 30, md: 38 } }} />
+    ),
   },
 ];
 
@@ -83,18 +86,26 @@ const features = [
 
 function StoreButtons() {
   return (
-    <Stack direction={{ xs: "column", sm: "row" }} spacing={2}>
+    <Stack
+      direction={{ xs: "column", sm: "row" }}
+      spacing={1.5}
+      sx={{
+        width: { xs: "100%", sm: "auto" },
+      }}
+    >
       <Button
         variant="outlined"
         startIcon={<AndroidIcon />}
         sx={{
           color: "#fff",
           borderColor: "rgba(255,255,255,0.2)",
-          px: 2.5,
-          py: 1.25,
+          px: 2.25,
+          py: 1.15,
           borderRadius: "12px",
           justifyContent: "flex-start",
           backgroundColor: "rgba(255,255,255,0.02)",
+          width: { xs: "100%", sm: "auto" },
+          minHeight: 58,
           "&:hover": {
             borderColor: "#8b5cf6",
             backgroundColor: "rgba(139,92,246,0.08)",
@@ -117,11 +128,13 @@ function StoreButtons() {
         sx={{
           color: "#fff",
           borderColor: "rgba(255,255,255,0.2)",
-          px: 2.5,
-          py: 1.25,
+          px: 2.25,
+          py: 1.15,
           borderRadius: "12px",
           justifyContent: "flex-start",
           backgroundColor: "rgba(255,255,255,0.02)",
+          width: { xs: "100%", sm: "auto" },
+          minHeight: 58,
           "&:hover": {
             borderColor: "#8b5cf6",
             backgroundColor: "rgba(139,92,246,0.08)",
@@ -143,12 +156,12 @@ function StoreButtons() {
 
 function SectionTitle({ eyebrow, title }: { eyebrow: string; title: string }) {
   return (
-    <Box sx={{ textAlign: "center", mb: 8 }}>
+    <Box sx={{ textAlign: "center", mb: { xs: 4.5, md: 8 } }}>
       <Typography
         sx={{
           color: "#a855f7",
           fontWeight: 700,
-          fontSize: 14,
+          fontSize: { xs: 12, md: 14 },
           letterSpacing: "0.12em",
           textTransform: "uppercase",
           mb: 1.5,
@@ -160,9 +173,10 @@ function SectionTitle({ eyebrow, title }: { eyebrow: string; title: string }) {
       <Typography
         sx={{
           color: "#fff",
-          fontWeight: 700,
-          fontSize: { xs: 30, md: 48 },
+          fontWeight: 800,
+          fontSize: { xs: 30, sm: 38, md: 48 },
           lineHeight: 1.15,
+          letterSpacing: "-0.035em",
         }}
       >
         {title}
@@ -179,6 +193,7 @@ export default function ClubmatePage() {
         background:
           "radial-gradient(circle at top left, rgba(147,51,234,0.25), transparent 30%), radial-gradient(circle at top right, rgba(59,130,246,0.16), transparent 25%), #05060a",
         color: "#fff",
+        overflowX: "hidden",
       }}
     >
       {/* NAVBAR */}
@@ -186,33 +201,40 @@ export default function ClubmatePage() {
         position="sticky"
         elevation={0}
         sx={{
-          background: "rgba(5,6,10,0.72)",
+          background: "rgba(5,6,10,0.78)",
           backdropFilter: "blur(12px)",
           borderBottom: "1px solid rgba(255,255,255,0.06)",
         }}
       >
-        <Container maxWidth="xl">
-          <Toolbar disableGutters sx={{ minHeight: 84 }}>
+        <Container maxWidth="xl" sx={{ px: { xs: 2, sm: 3, md: 4 } }}>
+          <Toolbar
+            disableGutters
+            sx={{
+              minHeight: { xs: 66, md: 84 },
+            }}
+          >
             <Box
               sx={{
                 display: "flex",
                 alignItems: "center",
-                gap: 1.5,
+                gap: { xs: 1, md: 1.5 },
                 flexGrow: 1,
+                minWidth: 0,
               }}
             >
               <Box
                 sx={{
-                  width: 42,
-                  height: 42,
+                  width: { xs: 36, md: 42 },
+                  height: { xs: 36, md: 42 },
                   borderRadius: "50%",
                   background:
                     "linear-gradient(135deg, #ff3131 0%, #ff0033 100%)",
                   display: "grid",
                   placeItems: "center",
                   fontWeight: 900,
-                  fontSize: 24,
+                  fontSize: { xs: 20, md: 24 },
                   color: "#111",
+                  flexShrink: 0,
                 }}
               >
                 C
@@ -220,9 +242,10 @@ export default function ClubmatePage() {
 
               <Typography
                 sx={{
-                  fontSize: 28,
+                  fontSize: { xs: 23, md: 28 },
                   fontWeight: 800,
                   letterSpacing: "-0.04em",
+                  whiteSpace: "nowrap",
                 }}
               >
                 clubmate
@@ -258,9 +281,10 @@ export default function ClubmatePage() {
             <Button
               variant="contained"
               sx={{
-                borderRadius: "16px",
-                px: 3.5,
-                py: 1.4,
+                display: { xs: "none", sm: "inline-flex" },
+                borderRadius: "14px",
+                px: { sm: 2.5, md: 3.5 },
+                py: { sm: 1.1, md: 1.4 },
                 fontWeight: 700,
                 textTransform: "none",
                 background: "linear-gradient(135deg, #7c3aed, #a855f7)",
@@ -280,11 +304,11 @@ export default function ClubmatePage() {
       <Box
         sx={{
           position: "relative",
-          minHeight: "100vh",
+          minHeight: { xs: "calc(100svh - 66px)", md: "100vh" },
           overflow: "hidden",
           borderBottom: "1px solid rgba(255,255,255,0.06)",
           display: "flex",
-          alignItems: "center",
+          alignItems: { xs: "flex-end", md: "center" },
         }}
       >
         <Image
@@ -304,8 +328,10 @@ export default function ClubmatePage() {
             position: "absolute",
             inset: 0,
             zIndex: 1,
-            background:
-              "linear-gradient(90deg, rgba(5,6,10,0.95) 0%, rgba(5,6,10,0.78) 35%, rgba(5,6,10,0.25) 70%, rgba(5,6,10,0.65) 100%)",
+            background: {
+              xs: "linear-gradient(to bottom, rgba(5,6,10,0.25) 0%, rgba(5,6,10,0.75) 42%, rgba(5,6,10,0.96) 100%)",
+              md: "linear-gradient(90deg, rgba(5,6,10,0.95) 0%, rgba(5,6,10,0.78) 35%, rgba(5,6,10,0.25) 70%, rgba(5,6,10,0.65) 100%)",
+            },
           }}
         />
 
@@ -324,19 +350,20 @@ export default function ClubmatePage() {
           sx={{
             position: "relative",
             zIndex: 3,
-            pt: { xs: 14, md: 12 },
-            pb: { xs: 8, md: 10 },
+            px: { xs: 2, sm: 3, md: 4 },
+            pt: { xs: 10, md: 12 },
+            pb: { xs: 5.5, sm: 7, md: 10 },
           }}
         >
-          <Box sx={{ maxWidth: 650 }}>
+          <Box sx={{ maxWidth: { xs: "100%", md: 650 } }}>
             <Typography
               sx={{
-                color: "#c026d3",
-                fontWeight: 700,
-                fontSize: 16,
+                color: "#d946ef",
+                fontWeight: 800,
+                fontSize: { xs: 12, sm: 14, md: 16 },
                 textTransform: "uppercase",
                 letterSpacing: "0.08em",
-                mb: 3,
+                mb: { xs: 2, md: 3 },
               }}
             >
               Dating. Clubbing. Connected.
@@ -344,11 +371,11 @@ export default function ClubmatePage() {
 
             <Typography
               sx={{
-                fontSize: { xs: 48, sm: 64, md: 84 },
-                fontWeight: 800,
-                lineHeight: 1.02,
-                letterSpacing: "-0.05em",
-                mb: 3,
+                fontSize: { xs: 39, sm: 54, md: 84 },
+                fontWeight: 900,
+                lineHeight: { xs: 1.04, md: 1.02 },
+                letterSpacing: "-0.055em",
+                mb: { xs: 2, md: 3 },
                 color: "#fff",
               }}
             >
@@ -365,11 +392,11 @@ export default function ClubmatePage() {
 
             <Typography
               sx={{
-                color: "rgba(255,255,255,0.72)",
-                fontSize: { xs: 18, md: 22 },
-                lineHeight: 1.7,
+                color: "rgba(255,255,255,0.76)",
+                fontSize: { xs: 16, sm: 18, md: 22 },
+                lineHeight: { xs: 1.55, md: 1.7 },
                 maxWidth: 560,
-                mb: 5,
+                mb: { xs: 3, md: 5 },
               }}
             >
               Discover club events, meet like-minded people, send ticket offers
@@ -380,6 +407,7 @@ export default function ClubmatePage() {
 
             <Typography
               sx={{
+                display: { xs: "none", md: "block" },
                 color: "rgba(255,255,255,0.6)",
                 mt: 5,
                 fontSize: 15,
@@ -395,19 +423,20 @@ export default function ClubmatePage() {
       <Box
         sx={{
           borderBottom: "1px solid rgba(255,255,255,0.06)",
-          py: 4,
+          py: { xs: 3, md: 4 },
           background: "rgba(255,255,255,0.01)",
         }}
       >
-        <Container maxWidth="xl">
+        <Container maxWidth="xl" sx={{ px: { xs: 2, sm: 3, md: 4 } }}>
           <Box
             sx={{
               display: "flex",
               flexDirection: "row",
               flexWrap: "wrap",
-              justifyContent: "space-between",
+              justifyContent: { xs: "center", md: "space-between" },
               alignItems: "center",
-              gap: 3,
+              gap: { xs: 2, md: 3 },
+              textAlign: "center",
             }}
           >
             {clubLogos.map((logo) => (
@@ -415,10 +444,11 @@ export default function ClubmatePage() {
                 key={logo}
                 sx={{
                   color: "rgba(255,255,255,0.45)",
-                  fontSize: { xs: 24, md: 34 },
+                  fontSize: { xs: 18, sm: 22, md: 34 },
                   fontWeight: 800,
                   letterSpacing: "-0.04em",
                   textTransform: "uppercase",
+                  lineHeight: 1,
                 }}
               >
                 {logo}
@@ -431,11 +461,11 @@ export default function ClubmatePage() {
       {/* HOW IT WORKS */}
       <Box
         sx={{
-          py: { xs: 10, md: 16 },
+          py: { xs: 7, md: 16 },
           borderBottom: "1px solid rgba(255,255,255,0.06)",
         }}
       >
-        <Container maxWidth="xl">
+        <Container maxWidth="xl" sx={{ px: { xs: 2, sm: 3, md: 4 } }}>
           <SectionTitle
             eyebrow="How it works"
             title="From match to the dancefloor."
@@ -446,19 +476,24 @@ export default function ClubmatePage() {
               display: "grid",
               gridTemplateColumns: { xs: "1fr", md: "repeat(4, 1fr)" },
               gap: 0,
-              borderTop: "1px solid rgba(255,255,255,0.06)",
-              borderBottom: "1px solid rgba(255,255,255,0.06)",
+              border: "1px solid rgba(255,255,255,0.06)",
+              borderRadius: { xs: "24px", md: 0 },
+              overflow: "hidden",
+              background: "rgba(255,255,255,0.02)",
             }}
           >
             {howItWorks.map((item, index) => (
               <Box
                 key={item.id}
                 sx={{
-                  px: { xs: 3, md: 4 },
-                  py: 5,
+                  px: { xs: 2.5, sm: 3, md: 4 },
+                  py: { xs: 3.5, md: 5 },
                   borderRight:
                     index !== howItWorks.length - 1
-                      ? { xs: "none", md: "1px solid rgba(255,255,255,0.06)" }
+                      ? {
+                          xs: "none",
+                          md: "1px solid rgba(255,255,255,0.06)",
+                        }
                       : "none",
                   borderBottom: {
                     xs:
@@ -469,14 +504,17 @@ export default function ClubmatePage() {
                   },
                 }}
               >
-                <Box sx={{ color: "#b026ff", mb: 3 }}>{item.icon}</Box>
+                <Box sx={{ color: "#b026ff", mb: { xs: 2, md: 3 } }}>
+                  {item.icon}
+                </Box>
 
                 <Typography
                   sx={{
                     color: "#fff",
-                    fontSize: 28,
+                    fontSize: { xs: 22, md: 28 },
                     fontWeight: 800,
-                    mb: 1.5,
+                    mb: 1,
+                    letterSpacing: "-0.03em",
                   }}
                 >
                   {item.id}. {item.title}
@@ -485,8 +523,8 @@ export default function ClubmatePage() {
                 <Typography
                   sx={{
                     color: "rgba(255,255,255,0.68)",
-                    fontSize: 18,
-                    lineHeight: 1.8,
+                    fontSize: { xs: 15.5, md: 18 },
+                    lineHeight: { xs: 1.65, md: 1.8 },
                   }}
                 >
                   {item.description}
@@ -498,22 +536,22 @@ export default function ClubmatePage() {
       </Box>
 
       {/* BUILT FOR CLUBBERS */}
-      <Box sx={{ py: { xs: 10, md: 16 } }}>
-        <Container maxWidth="xl">
+      <Box sx={{ py: { xs: 7, md: 16 } }}>
+        <Container maxWidth="xl" sx={{ px: { xs: 2, sm: 3, md: 4 } }}>
           <Box
             sx={{
               display: "grid",
               gridTemplateColumns: { xs: "1fr", lg: "0.8fr 1.2fr" },
-              gap: { xs: 6, lg: 6 },
+              gap: { xs: 5, lg: 6 },
               alignItems: "stretch",
             }}
           >
             <Box>
               <Typography
                 sx={{
-                  color: "#c026d3",
-                  fontWeight: 700,
-                  fontSize: 14,
+                  color: "#d946ef",
+                  fontWeight: 800,
+                  fontSize: { xs: 12, md: 14 },
                   textTransform: "uppercase",
                   letterSpacing: "0.12em",
                   mb: 2,
@@ -524,11 +562,11 @@ export default function ClubmatePage() {
 
               <Typography
                 sx={{
-                  fontSize: { xs: 42, md: 60 },
+                  fontSize: { xs: 34, sm: 44, md: 60 },
                   lineHeight: 1.05,
-                  fontWeight: 800,
-                  letterSpacing: "-0.04em",
-                  mb: 3,
+                  fontWeight: 900,
+                  letterSpacing: "-0.045em",
+                  mb: { xs: 2, md: 3 },
                 }}
               >
                 More than dating.
@@ -541,23 +579,28 @@ export default function ClubmatePage() {
               <Typography
                 sx={{
                   color: "rgba(255,255,255,0.72)",
-                  fontSize: 20,
-                  lineHeight: 1.9,
+                  fontSize: { xs: 16, md: 20 },
+                  lineHeight: { xs: 1.65, md: 1.9 },
                   maxWidth: 520,
-                  mb: 6,
+                  mb: { xs: 4, md: 6 },
                 }}
               >
                 ClubMate is the first app that connects club culture with real
                 connections. No random matches. Just people, events and energy.
               </Typography>
 
-              <Stack spacing={4}>
+              <Stack spacing={{ xs: 3, md: 4 }}>
                 {features.map((item) => (
-                  <Stack key={item.title} direction="row" spacing={2.5}>
+                  <Stack
+                    key={item.title}
+                    direction="row"
+                    spacing={{ xs: 2, md: 2.5 }}
+                    alignItems="flex-start"
+                  >
                     <Box
                       sx={{
-                        width: 48,
-                        height: 48,
+                        width: { xs: 44, md: 48 },
+                        height: { xs: 44, md: 48 },
                         borderRadius: "14px",
                         border: "1px solid rgba(176,38,255,0.35)",
                         display: "grid",
@@ -573,10 +616,10 @@ export default function ClubmatePage() {
                     <Box>
                       <Typography
                         sx={{
-                          fontSize: 22,
-                          fontWeight: 700,
+                          fontSize: { xs: 19, md: 22 },
+                          fontWeight: 800,
                           color: "#fff",
-                          mb: 0.75,
+                          mb: 0.5,
                         }}
                       >
                         {item.title}
@@ -585,8 +628,8 @@ export default function ClubmatePage() {
                       <Typography
                         sx={{
                           color: "rgba(255,255,255,0.68)",
-                          fontSize: 17,
-                          lineHeight: 1.8,
+                          fontSize: { xs: 15.5, md: 17 },
+                          lineHeight: { xs: 1.65, md: 1.8 },
                           maxWidth: 420,
                         }}
                       >
@@ -601,10 +644,11 @@ export default function ClubmatePage() {
             <Box
               sx={{
                 position: "relative",
-                borderRadius: "32px",
+                borderRadius: { xs: "24px", md: "32px" },
                 overflow: "hidden",
                 border: "1px solid rgba(255,255,255,0.08)",
-                minHeight: { xs: 500, md: 760 },
+                minHeight: { xs: 520, sm: 620, md: 760 },
+                background: "rgba(255,255,255,0.03)",
               }}
             >
               <Image
@@ -612,7 +656,8 @@ export default function ClubmatePage() {
                 alt="Clubmate couple banner"
                 fill
                 style={{
-                  objectFit: "contain",
+                  objectFit: "cover",
+                  objectPosition: "center",
                 }}
               />
 
@@ -621,7 +666,7 @@ export default function ClubmatePage() {
                   position: "absolute",
                   inset: 0,
                   background:
-                    "linear-gradient(to top, rgba(5,6,10,0.75), rgba(5,6,10,0.15) 45%, rgba(5,6,10,0.08))",
+                    "linear-gradient(to top, rgba(5,6,10,0.88), rgba(5,6,10,0.28) 50%, rgba(5,6,10,0.08))",
                 }}
               />
 
@@ -629,24 +674,25 @@ export default function ClubmatePage() {
                 sx={{
                   position: "absolute",
                   left: "50%",
-                  bottom: 28,
+                  bottom: { xs: 16, md: 28 },
                   transform: "translateX(-50%)",
-                  width: "calc(100% - 40px)",
+                  width: { xs: "calc(100% - 24px)", md: "calc(100% - 40px)" },
                   maxWidth: 700,
-                  borderRadius: "28px",
-                  p: { xs: 3, md: 4 },
+                  borderRadius: { xs: "22px", md: "28px" },
+                  p: { xs: 2.25, sm: 3, md: 4 },
                   backdropFilter: "blur(16px)",
-                  background: "rgba(17, 17, 24, 0.55)",
+                  background: "rgba(17, 17, 24, 0.62)",
                   border: "1px solid rgba(255,255,255,0.08)",
                   textAlign: "center",
                 }}
               >
                 <Typography
                   sx={{
-                    fontSize: { xs: 20, md: 32 },
-                    fontWeight: 700,
+                    fontSize: { xs: 21, sm: 25, md: 32 },
+                    fontWeight: 800,
                     lineHeight: 1.2,
-                    mb: 3,
+                    mb: { xs: 2, md: 3 },
+                    letterSpacing: "-0.03em",
                   }}
                 >
                   Ready to find your club partner?
@@ -655,10 +701,11 @@ export default function ClubmatePage() {
                 <Button
                   variant="contained"
                   sx={{
-                    borderRadius: "16px",
-                    px: 4,
-                    py: 1.5,
-                    mb: 3,
+                    borderRadius: "14px",
+                    px: { xs: 2.5, md: 4 },
+                    py: { xs: 1.25, md: 1.5 },
+                    mb: { xs: 2, md: 3 },
+                    width: { xs: "100%", sm: "auto" },
                     fontWeight: 700,
                     textTransform: "none",
                     background: "linear-gradient(135deg, #7c3aed, #a855f7)",
@@ -684,17 +731,18 @@ export default function ClubmatePage() {
       <Box
         sx={{
           borderTop: "1px solid rgba(255,255,255,0.06)",
-          py: 6,
+          py: { xs: 5, md: 6 },
           background: "rgba(0,0,0,0.2)",
         }}
       >
-        <Container maxWidth="xl">
+        <Container maxWidth="xl" sx={{ px: { xs: 2, sm: 3, md: 4 } }}>
           <Box
             sx={{
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
               gap: 2,
+              textAlign: "center",
             }}
           >
             <Box
