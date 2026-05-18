@@ -55,10 +55,10 @@ export default function ProjectsSection() {
                 </Typography>
 
                 <div className="mt-5 flex flex-wrap gap-2">
-                  {project.technologies.map((technology) => (
+                  {project.stack.map((stack) => (
                     <Chip
-                      key={technology}
-                      label={technology}
+                      key={stack}
+                      label={stack}
                       size="small"
                       variant="outlined"
                       color="primary"

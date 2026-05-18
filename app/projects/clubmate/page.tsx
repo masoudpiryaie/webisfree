@@ -595,7 +595,7 @@ export default function ClubmatePage() {
                     key={item.title}
                     direction="row"
                     spacing={{ xs: 2, md: 2.5 }}
-                    alignItems="flex-start"
+                    sx={{ alignItems: "flex-start" }}
                   >
                     <Box
                       sx={{

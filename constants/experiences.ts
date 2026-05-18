@@ -1,6 +1,6 @@
 export const experiences = [
   {
-    title: "React Developer",
+    title: "Frontend Developer",
     company: "Pardco - GS1",
     date: "Jul 2022 - Mar 2025",
     type: "On-site, full-time",
