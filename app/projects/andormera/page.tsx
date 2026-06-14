@@ -252,7 +252,7 @@ export default function AndormeraLanding() {
 
           <div className="flex items-center gap-2">
             <Link
-              href="https://www.home-search-swart.vercel.app/en/submit-property"
+              href="https://home-search-swart.vercel.app/en/submit-property"
               className="hidden items-center gap-2 rounded-xl bg-[#d88409] px-4 py-2.5 text-sm font-extrabold text-white shadow-lg shadow-amber-700/20 transition hover:bg-[#be7307] sm:flex"
             >
               <CirclePlus className="h-4 w-4" />
@@ -260,7 +260,7 @@ export default function AndormeraLanding() {
             </Link>
 
             <Link
-              href="https://www.home-search-swart.vercel.app/en/login"
+              href="https://home-search-swart.vercel.app/en/login"
               className="inline-flex items-center gap-1.5 rounded-xl border border-slate-200 bg-white px-3 py-2 text-[11px] font-extrabold text-slate-800 shadow-sm sm:gap-2 sm:px-4 sm:py-2.5 sm:text-sm"
             >
               <UserRound className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
@@ -293,7 +293,7 @@ export default function AndormeraLanding() {
 
             <div className="mt-5 flex flex-col justify-center gap-2.5 sm:mt-7 sm:flex-row sm:gap-3 lg:justify-start">
               <ButtonLink
-                href="https://www.home-search-swart.vercel.app/en/submit-property"
+                href="https://home-search-swart.vercel.app/en/submit-property"
                 className="w-full sm:w-auto"
               >
                 <CirclePlus className="h-4 w-4" />
@@ -301,7 +301,7 @@ export default function AndormeraLanding() {
               </ButtonLink>
 
               <ButtonLink
-                href="https://www.home-search-swart.vercel.app/de/my-listings"
+                href="https://home-search-swart.vercel.app/de/my-listings"
                 variant="secondary"
                 className="w-full sm:w-auto"
               >
@@ -405,7 +405,7 @@ export default function AndormeraLanding() {
 
             <div className="mt-5 sm:mt-7">
               <ButtonLink
-                href="https://www.home-search-swart.vercel.app/admin"
+                href="https://home-search-swart.vercel.app/admin"
                 className="w-full sm:w-auto"
               >
                 Go to Dashboard
@@ -472,7 +472,7 @@ export default function AndormeraLanding() {
 
                 <div className="mt-4 sm:mt-5">
                   <ButtonLink
-                    href="https://www.home-search-swart.vercel.app/en/submit-property"
+                    href="https://home-search-swart.vercel.app/en/submit-property"
                     className="w-full sm:w-auto"
                   >
                     Add Property for Free
@@ -505,7 +505,7 @@ export default function AndormeraLanding() {
 
                 <div className="mt-4 sm:mt-5">
                   <ButtonLink
-                    href="https://www.home-search-swart.vercel.app/de/my-listings"
+                    href="https://home-search-swart.vercel.app/de/my-listings"
                     variant="secondary"
                     className="w-full sm:w-auto"
                   >
@@ -532,7 +532,7 @@ export default function AndormeraLanding() {
 
           <div className="flex flex-col gap-2.5 sm:flex-row sm:gap-3">
             <ButtonLink
-              href="https://www.home-search-swart.vercel.app/en/submit-property"
+              href="https://home-search-swart.vercel.app/en/submit-property"
               className="w-full sm:w-auto"
             >
               <CirclePlus className="h-4 w-4" />
