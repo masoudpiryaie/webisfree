@@ -4,7 +4,7 @@ export const profile = {
   location: "Berlin, Germany",
   email: "masoud.mpy@gmail.com",
   phone: "+49 157 55994405",
-  linkedin: "https://www.linkedin.com/in/masoud-piryaie/",
+  linkedin: "https://www.linkedin.com/in/masoudpiryaie/",
   github: "https://github.com/masoudpiryaie/",
   summary:
     "Frontend Engineer with 5+ years of experience building scalable, TypeScript-first applications with React and Next.js. Deep expertise in component architecture, performance optimization, and API integration, with a strong track record of delivering maintainable, high-quality code in cross-functional teams.",
